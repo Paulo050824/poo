@@ -1,9 +1,8 @@
 from models.avaliacao import Avaliacao
-
+from models.cardapio.itemcardapio import ItemCardapio
 class Restaurante:
     restaurantes = []
     # lista
-
     def __init__(self, nome_restaurante, localizacao,tipo_de_comida
          ,quantidade_funcionarios,):
         # inicializa nosso restaurante ou qualquer coisa que colocarmo como: livraria, restaurantes, roupas e etc...
@@ -13,6 +12,7 @@ class Restaurante:
         self.quantidade_funcionarios = quantidade_funcionarios
         self._status = False
         self._avaliacao = []
+        self._cardipio = []
         Restaurante.restaurantes.append(self)
 
     def __str__(self): 
@@ -31,6 +31,19 @@ class Restaurante:
         quant_notas = len(self._avaliacao)
         media_total = round(notas_somadas/quant_notas, 1)
         return media_total
+    @property
+    def exibir_cardapio(self):
+        print(f"Cardápio do restaurante: {self.nome_restaurante}")
+        for i,item in enumerate(self._cardipio,start=1):
+            if hasattr(item,'descricao'):
+                mensagem_prato = f"{i}.|Nome: {item._nome} \n|Preço: {item._preco} \n|Descrição: {item.descricao}"
+                print(mensagem_prato)
+            elif hasattr(item,'tamanho'):
+                mensagem_bebida = f"{i}.|Nome: {item._nome} \n|Preço: {item._preco} \n|Tamanho: {item.tamanho}"
+                print(mensagem_bebida)
+            else:
+                mensagem_sobremesas = f"{i}.|Nome: {item._nome} \n|Preço: {item._preco} \n|Sabor: {item.sabor}"
+                print(mensagem_sobremesas)
 
     @classmethod
     def listar_restaurante(cls):
@@ -44,6 +57,6 @@ class Restaurante:
         avaliacao = Avaliacao(cliente, nota)
         self._avaliacao.append(avaliacao)
 
-
-
-    
+    def adicionar_ao_cardapio(self,item):
+        if isinstance(item, ItemCardapio):
+            self._cardipio.append(item)

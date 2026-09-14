@@ -1,15 +1,39 @@
 from models.restaurante import Restaurante
+from models.cardapio.bebida import Bebida
+from models.cardapio.prato import Prato
+from models.cardapio.sobremesas import Sobremesas
 
 
-la_mafia = Restaurante("La Mafia", "rua açai, N:401", "Italiana", 7) 
+la_mafia = Restaurante("La Mafia", "rua açai, N:401", "Italiana/Japonesa", 7) 
 mada = Restaurante("Mada pizzaria", "Rua Atilio, N:209", "Italiana", 4)
 steve_pizza = Restaurante("Steve Pizza", "Rua Doutor Murici, N:70" ,"Porções", 3)
-Restaurante.ativar(steve_pizza)
-steve_pizza.receber_avaliacao("Heron", 2.5)
-steve_pizza.receber_avaliacao("Paulo", 4.9)
+Restaurante.ativar(la_mafia)
+la_mafia.receber_avaliacao("Heron", 5.0)
+la_mafia.receber_avaliacao("Paulo", 5.0)
+
+macarrao = Prato("Macarrão a bolonhesa, com strogonoff", 86.99, "Macarrão muito saboroso feito com muito amor")
+child_fortnite = Bebida("Child azul, alcoolico", 15.99, "750ML")
+pastel = Prato("Pastel de carne de cachorro", 15.99, "Pastel saboroso com carne de cachorro e muita maconha, (vindo da CHINA)")
+sorvete = Sobremesas("Creme de Esgoto", 9.99, "Sorvete de chocolate com gosto de água de esgoto")
+brigadeiro = Sobremesas("Bolinha do Lixo", 7.99, "Brigadeiro de chocolate com pedaços crocantes de resto de comida")
+pudim = Sobremesas("Pudim de Meia Suada", 11.99, "Pudim de baunilha com um forte sabor de meia usada")
+bolo = Sobremesas("Bolo de Chulé", 14.99, "Bolo de queijo com cobertura cremosa sabor chulé")
+torta = Sobremesas("Torta do Banheiro", 12.99, "Torta de chocolate com recheio que lembra uma privada entupida")
+
+la_mafia.adicionar_ao_cardapio(macarrao)
+la_mafia.adicionar_ao_cardapio(child_fortnite)
+la_mafia.adicionar_ao_cardapio(pastel)
+la_mafia.adicionar_ao_cardapio(sorvete)
+la_mafia.adicionar_ao_cardapio(brigadeiro)
+la_mafia.adicionar_ao_cardapio(pudim)
+la_mafia.adicionar_ao_cardapio(bolo)
+la_mafia.adicionar_ao_cardapio(torta)
+
+
 
 def main():
     Restaurante.listar_restaurante()
+    la_mafia.exibir_cardapio
 
 if __name__ == "__main__":
     main()
