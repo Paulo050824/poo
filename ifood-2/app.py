@@ -14,20 +14,12 @@ la_mafia.receber_avaliacao("Paulo", 5.0)
 macarrao = Prato("Macarrão a bolonhesa, com strogonoff", 86.99, "Macarrão muito saboroso feito com muito amor")
 child_fortnite = Bebida("Child azul, alcoolico", 15.99, "750ML")
 pastel = Prato("Pastel de carne de cachorro", 15.99, "Pastel saboroso com carne de cachorro e muita maconha, (vindo da CHINA)")
-sorvete = Sobremesas("Creme de Esgoto", 9.99, "Sorvete de chocolate com gosto de água de esgoto")
-brigadeiro = Sobremesas("Bolinha do Lixo", 7.99, "Brigadeiro de chocolate com pedaços crocantes de resto de comida")
-pudim = Sobremesas("Pudim de Meia Suada", 11.99, "Pudim de baunilha com um forte sabor de meia usada")
-bolo = Sobremesas("Bolo de Chulé", 14.99, "Bolo de queijo com cobertura cremosa sabor chulé")
-torta = Sobremesas("Torta do Banheiro", 12.99, "Torta de chocolate com recheio que lembra uma privada entupida")
+sorvete = Sobremesas("Creme de Esgoto", 9.99, "Sorvete de chocolate com gosto de água ")
 
 la_mafia.adicionar_ao_cardapio(macarrao)
 la_mafia.adicionar_ao_cardapio(child_fortnite)
 la_mafia.adicionar_ao_cardapio(pastel)
 la_mafia.adicionar_ao_cardapio(sorvete)
-la_mafia.adicionar_ao_cardapio(brigadeiro)
-la_mafia.adicionar_ao_cardapio(pudim)
-la_mafia.adicionar_ao_cardapio(bolo)
-la_mafia.adicionar_ao_cardapio(torta)
 
 
 
